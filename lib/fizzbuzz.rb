@@ -1,11 +1,22 @@
 def fizzbuzz(n)
-  case
-
-  when n == 0 then return 0
-  when n % 3 == 0 && n % 5 == 0 then "fizzbuzz"
-  when n % 3 == 0 then "fizz"
-  when n % 5 == 0 then "buzz"
-  else return n
-
-  end
+  return 'fizzbuzz' if is_divisible_by_fifteen?(n)
+  return 'buzz' if is_divisible_by_five?(n)
+  return 'fizz' if is_divisible_by_three?(n)
+  n
 end
+
+  def is_divisible_by_three?(n)
+  is_divisible_by?(n,3)
+  end
+
+  def is_divisible_by_five?(n)
+    is_divisible_by?(n,5)
+  end
+
+  def is_divisible_by_fifteen?(n)
+    is_divisible_by?(n,15)
+  end
+
+  def is_divisible_by?(n,divisor)
+    n % divisor == 0
+  end
